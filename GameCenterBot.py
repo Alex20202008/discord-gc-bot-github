@@ -31,7 +31,11 @@ async def привет(ctx):
 
 @bot.command(pass_context = True)
 async def add_reaction(ctx):
-    await bot.add_reaction(ctx.message, ':ok_hand:')
+    accept_decline = await ctx.send("Test")
+    cross = self.bot.get_emoji(558322190060093441)
+    checkM = self.bot.get_emoji(558322116685070378)
+    await accept_decline.add_reaction(checkM)
+    await accept_decline.add_reaction(cross)
 
 
 bot.run(token)

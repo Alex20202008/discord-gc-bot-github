@@ -28,11 +28,7 @@ async def привет(ctx):
 	await ctx.send('Привет, ' + author.mention)
 
 
-@bot.command()
-@commmands.has_permissions(administrator = True)
-async def mute_role(ctx, member: discord.Member);
-    mute_role = discord.utils.get(ctx.message.guild.roles, name = '𝕄𝕦𝕥𝕖🔇')
-    await member.add_roles(mute_role)
+
 
 
 

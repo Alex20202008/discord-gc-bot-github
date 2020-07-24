@@ -11,9 +11,11 @@ bot = commands.Bot(command_prefix='!')
 async def on_ready():
     print('Bot is online. Be happy :)')
 
+
 @bot.command()
 async def send(ctx, *, arg):
     await ctx.send(arg)
+
 
 @bot.command()
 async def hello(ctx):
@@ -21,17 +23,10 @@ async def hello(ctx):
 	await ctx.send('Hello, ' + author.mention)
 
 
-
 @bot.command()
 async def привет(ctx):
 	author = ctx.message.author
 	await ctx.send('Привет, ' + author.mention)
-
-
-
-
-
-
 
 
 bot.run(token)

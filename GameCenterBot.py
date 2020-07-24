@@ -23,31 +23,10 @@ async def hello(ctx):
 
 
 
-@bot.command(ctx)
+@bot.command()
 async def привет(ctx):
-    author = ctx.message.authoe
-    await ctx.send('Привет, ' + author)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	author = ctx.message.author
+	await ctx.send('Привет, ' + author.mention)
 
 
 

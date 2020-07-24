@@ -26,7 +26,7 @@ async def hello(ctx):
 @bot.command()
 async def привет(ctx):
 	author = ctx.message.author
-	await ctx.send('Привет, ' + author.mention)
+	await ctx.send('Привет, {}'.format({author}))
 
 
 

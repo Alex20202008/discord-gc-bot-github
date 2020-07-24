@@ -29,4 +29,9 @@ async def привет(ctx):
 	await ctx.send('Привет, ' + author.mention)
 
 
+@bot.command(pass_context = True)
+async def add_reaction(ctx):
+    await bot.add_reaction(ctx.message, '👌')
+
+
 bot.run(token)

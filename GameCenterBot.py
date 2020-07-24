@@ -15,6 +15,13 @@ async def on_ready():
 async def send(ctx, *, arg):
     await ctx.send(arg)
 
+@bot.command()
+async def hello(ctx):
+	author = message.author
+	await ctx.send('Hello, ' + author.mention)
+
+
+
 
 
 bot.run(token)

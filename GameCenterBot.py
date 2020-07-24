@@ -31,7 +31,7 @@ async def привет(ctx):
 
 @bot.command(pass_context = True)
 async def add_reaction(ctx):
-    await bot.add_reaction(ctx.message, '👌')
+    await bot.add_reaction(ctx.message, ':ok_hand:')
 
 
 bot.run(token)

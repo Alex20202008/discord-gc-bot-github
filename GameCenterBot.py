@@ -17,7 +17,7 @@ async def send(ctx, *, arg):
 
 @bot.command()
 async def hello(ctx):
-	author = message.author
+	author = ctx.message.author
 	await ctx.send('Hello, ' + author.mention)
 
 

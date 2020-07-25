@@ -29,9 +29,37 @@ async def привет(ctx):
 	await ctx.send('Привет, ' + author.mention)
 
 
-@bot.command(pass_context = True)
-async def add_reaction(ctx):
-    await bot.add_reaction(ctx.message, emoji='👌')
+@bot.command()
+async def embed(ctx):
+
+    embed = discord.Embed(
+        colour=discord.Colour.blue(),
+        title="Test Title",
+        description="This is a test"
+    )
+
+    embed.set_author(name="Author", icon_url="https://cdn.discordapp.com/attachments/443208943213477889/601699371221909504/imagesfidosfhdis.jpg")
+    embed.set_image(url="https://cdn.discordapp.com/attachments/443208943213477889/601699371221909504/imagesfidosfhdis.jpg")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/443208943213477889/601699371221909504/imagesfidosfhdis.jpg")
+    embed.add_field(name="hello", value="This has the bot say hello", inline=False)
+    embed.add_field(name="Test Field 2", value="this is test 2", inline=False)
+    embed.add_field(name="test field 3", value="This is a test 3", inline=False)
+    embed.set_footer(text="This is a footer")
+
+    await ctx.send(embed=embed)
+
+@bot.command(pass_context=True)
+async def help(ctx):
+    author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.purple()
+    )
+    test_e.set_author(name="Bot prefix = !")
+    test_e.add_field(name="embed", value="This will post an embed into the discord", inline=False)
+    test_e.add_field(name="good day", value="today is a good day")
+
+    await ctx.send(embed=test_e)
 
 
 bot.run(token)

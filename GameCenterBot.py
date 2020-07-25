@@ -49,7 +49,7 @@ async def embed(ctx):
     await ctx.send(embed=embed)
 
 @bot.command(pass_context=True)
-async def help(ctx):
+async def help_me(ctx):
     author = ctx.message.author
 
     test_e = discord.Embed(

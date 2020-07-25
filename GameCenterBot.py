@@ -39,11 +39,13 @@ async def embed(ctx):
     )
 
 
+    embed.set_image(url="https://cdn.discordapp.com/attachments/443208943213477889/601699371221909504/imagesfidosfhdis.jpg")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/443208943213477889/601699371221909504/imagesfidosfhdis.jpg")
     embed.add_field(name="hello", value="This has the bot say hello", inline=False)
     embed.add_field(name="Test Field 2", value="this is test 2", inline=False)
     embed.add_field(name="test field 3", value="This is a test 3", inline=False)
-    embed.set_author_footer(name="Made by MegicalAlex", icon_url="https://cdn.discordapp.com/avatars/717480562155192381/df15e97304ee47e04fe912b22a5ebdd5.jpg?size=1024")
-
+    embed.set_author(name="Author", icon_url="https://cdn.discordapp.com/avatars/717480562155192381/df15e97304ee47e04fe912b22a5ebdd5.jpg?size=1024")
+    embed.set_footer(text="This is a footer")
     await ctx.send(embed=embed)
 
 @bot.command(pass_context=True)

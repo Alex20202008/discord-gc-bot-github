@@ -62,7 +62,7 @@ async def help_me(ctx):
 
 
 @Client.command(pass_context = True)
-async def clear(ctx, number):
+async def game_clear(ctx, number):
     number = int(number) #Converting the amount of messages to delete to an integer
     counter = 0
     async for x in Client.logs_from(ctx.message.channel, limit = number):

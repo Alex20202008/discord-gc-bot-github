@@ -11,6 +11,8 @@ bot = commands.Bot(command_prefix='!')
 @bot.event
 async def on_ready():
     print('Bot is online. Be happy :)')
+    await bot.change_presence(statud=discord.Status.idle, activity=discord.listening('!help | !commands | !vote'))
+
 
 
 @bot.command()
@@ -71,10 +73,7 @@ async def delete(ctx):
     await bot.delete_message(message_delete)
 
 
-@bot.command()
-async def лох_недели(ctx):
-    user = random.choice(message.channel.guild.members)
-    await bot.send_message('Главный лох недели - ' + str(user.mention))
+
 
 
 

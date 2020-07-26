@@ -63,13 +63,13 @@ async def help_me(ctx):
 
 
 
-@Client.command(pass_context = True)
+@bot.command(pass_context = True)
 async def clear(ctx, number):
     number = int(number) #Converting the amount of messages to delete to an integer
     counter = 0
-    async for x in Client.logs_from(ctx.message.channel, limit = number):
+    async for x in bot.logs_from(ctx.message.channel, limit = number):
         if counter < number:
-            await Client.delete_message(x)
+            await bot.delete_message(x)
             counter += 1
             await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
 

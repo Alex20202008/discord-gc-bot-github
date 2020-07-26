@@ -74,7 +74,7 @@ async def delete(ctx):
 @bot.command()
 async def лох_недели(ctx):
     user = random.choice(message.channel.guild.members)
-        await bot.send_message('Главный лох недели - ' + str(user.mention))
+    await bot.send_message('Главный лох недели - ' + str(user.mention))
 
 
 

@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='!')
 @bot.event
 async def on_ready():
     print('Bot is online. Be happy :)')
-    await bot.change_presence(statud=discord.Status.idle, activity=discord.listening('!help | !commands | !vote'))
+    await bot.change_presence(activity=discord.Activity(activity=discord.ActivityType.listening, name="!help | !commands | !vote"))
 
 
 

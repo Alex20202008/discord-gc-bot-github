@@ -69,6 +69,6 @@ async def game_clear(ctx, number):
         if counter < number:
             await Client.delete_message(x)
             counter += 1
-            await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
+            await time.sleep(1.2) #1.2 second timer so the deleting process can be even
 
 bot.run(token)

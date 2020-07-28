@@ -15,12 +15,11 @@ async def on_ready():
     activity = discord.Activity(name='Не трогайте бота', type=1)
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online)
 
-@bot.command
+@bot.command()
 async def avatar(ctx, member: discord.Member):
     author = ctx.message.author
     embed = discord.Embed( description='**Аватарка пользователя ' + str(member.mention) + '**', colour=discord.Colour.purple())
     embed.set_image(url=member.avatar_url)
-
 
 @bot.command()
 async def send(ctx, *, arg):

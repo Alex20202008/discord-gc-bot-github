@@ -66,7 +66,7 @@ async def help_me(ctx):
 
 
 @bot.command()
-async def avatar(ctx, member: discord.Member):
+async def hui(ctx, member: discord.Member):
     author = ctx.message.author
     embed = discord.Embed( description='**Аватарка пользователя ' + str(member.mention) + '**', colour=discord.Colour.purple())
     embed.set_image(url=member.avatar_url)

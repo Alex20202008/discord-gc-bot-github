@@ -3,6 +3,7 @@ from discord.ext import commands
 import time
 import os
 import asyncio
+import random
 
 token = os.environ.get('HIDE_BOT_TOKEN') # no u
 

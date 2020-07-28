@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='!')
 @bot.event
 async def on_ready():
     print('Bot is online. Be happy :)')
-    await bot.change_presence(activity=discord.activity(name='(Не трогайте бота)', type=discord.ActivityType.game), status=discord.Status.do_not_disturb)
+    await bot.change_presence(activity=discord.activity(name='(Не трогайте бота)', type=discord.ActivityType.listening), status=discord.Status.do_not_disturb)
 
 
 

@@ -11,14 +11,14 @@ bot = commands.Bot(command_prefix='!')
 
 @bot.event
 async def on_ready():
-
+    pass
 
 
 @bot.command()
 async def hui(ctx, member: discord.Member):
     author = ctx.message.author
-    embed = discord.Embed( description='**Аватарка пользователя ' + str(member.mention) + '**', colour=discord.Colour.purple())
-    embed.set_image(url=member.avatar_url)
+    qweqwe = discord.Embed( description='**Аватарка пользователя ' + str(member.mention) + '**', colour=discord.Colour.purple())
+    qweqwe.set_image(url=member.avatar_url)
 
 
 

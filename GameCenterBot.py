@@ -71,12 +71,7 @@ async def help_me(ctx):
 
 
 
-@bot.command()
-async def delete(ctx):
-    message_delete = 'Я удалю это сообщение через 3 секунды'
-    await bot.send_message(message_delete)
-    await time.sleep(3.0)
-    await bot.delete_message(message_delete)
+
 
 
 

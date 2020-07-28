@@ -21,6 +21,8 @@ async def avatar(ctx, member: discord.Member):
     embed.set_image(url=member.avatar_url)
     await ctx.send(embed=embed)
 
+
+
 @bot.command(pass_context=True)
 async def clear_nahui(ctx, amount=100):
     channel = ctx.message.channel

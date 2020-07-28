@@ -26,7 +26,7 @@ async def clear_nahui(ctx, amount=100):
     channel = ctx.message.channel
     messages = []
     async for message in channel.history(limit=amount):
-            messages.append(message)
+        messages.append(message)
 
     await channel.delete_messages(messages)
     yes = await ctx.send('Успешно удалено. Ты хуесосище!!')

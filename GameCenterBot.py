@@ -16,12 +16,10 @@ async def on_ready():
 
 @bot.command()
 async def avatar(ctx, member: discord.Member):
-	author = ctx.message.author
-	embed = discord.Embed( description='**Аватарка пользователя ' + str(member.mention) + '**', colour=discord.Colour.purple())
-	embed.set_image(url=member.avatar_url)
-
-
-	await ctx.send(embed=embed)
+    author = ctx.message.author
+    embed = discord.Embed( description='**Аватарка пользователя ' + str(member.mention) + '**', colour=discord.Colour.purple())
+    embed.set_image(url=member.avatar_url)
+    await ctx.send(embed=embed)
 
 
 @bot.command()

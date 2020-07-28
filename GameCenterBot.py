@@ -24,14 +24,14 @@ async def avatar(ctx, member: discord.Member):
 
 
 @bot.command(pass_context=True)
-async def clear_nahui(ctx, amount=100):
+async def clear(ctx, amount=100):
     channel = ctx.message.channel
     messages = []
     async for message in channel.history(limit=amount):
         messages.append(message)
 
     await channel.delete_messages(messages)
-    yes = await ctx.send('Успешно удалено. Ты хуесосище!!')
+    yes = await ctx.send('Успешно удалено.')
     await yes.add_reaction("✅")
 
 

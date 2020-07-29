@@ -54,7 +54,7 @@ async def kiss_other(ctx, member: discord.Member, member1: discord.Member):
     else:
         if member == member1:
             # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
-            embed = discord.Embed( description='**' + str(author.mention) + 'поцеловал сам себя(его заставил ' + author.mention +':))**', colour=discord.Colour.red())
+            embed = discord.Embed( description='**' + str(author.mention) + 'поцеловал сам себя(его заставил ' + author.mention + ':))**', colour=discord.Colour.red())
             await ctx.send(embed=embed)
 
 

@@ -42,6 +42,24 @@ async def kiss(ctx, member: discord.Member):
 
 
 
+@bot.command()
+async def idea(ctx, *, args):
+    author = ctx.message.author
+    channel_all = ctx.message.channel
+    channel_idea = bot.get_channel(718153307880947712)
+    channel_vote = bot.get_channel(727967281547837440)
+
+
+    if (channel_all != channel_idea):
+        await ctx.send(str(author.mention) + ', идеи нужно писать в канале ' + str(channel_idea.mention))
+    else:
+        if (channel_all == channel_idea):
+            await ctx.message.delete()
+            idk = await channel_vote.send(args + '\n\nИдею предложил(a): ' + str(author.mention) +'\n✅ - Одобрение\n❌ - Несогласие\n❓ - Нейтрально')
+            await idk.add_reaction('✅')
+            await idk.add_reaction('❌')
+            await idk.add_reaction('❓')
+
 
 @bot.command()
 async def kiss_other(ctx, member: discord.Member, member1: discord.Member):

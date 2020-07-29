@@ -26,7 +26,7 @@ async def avatar(ctx, member: discord.Member):
 async def kiss(ctx, member: discord.Member):
     author = ctx.message.author
     # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
-    embed = discord.Embed( description='**' + str(author.mention) + ' и ' str(member.mention) + ' поцеловались**', colour=discord.Colour.purple())
+    embed = discord.Embed( description='**' + str(author.mention) + ' и ' + str(member.mention) + ' поцеловались**', colour=discord.Colour.purple())
     embed.set_image(url='https://i.pinimg.com/originals/2f/74/ef/2f74efa30fdde076016c754eb8406f5d.gif')
     await ctx.send(embed=embed)
 

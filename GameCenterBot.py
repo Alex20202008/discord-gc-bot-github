@@ -21,7 +21,31 @@ async def avatar(ctx, member: discord.Member):
     embed.set_image(url=member.avatar_url)
     await ctx.send(embed=embed)
 
+@bot.command()
+async def userinfo(ctx, member: discord.Member):
 
+    roles = [role for role in member.roles]
+
+    embed = discord.Embed(colour=member.color, timestamp=ctx.message.created_at)
+
+    embed.set_author(name=f"Информация пользователя {member}")
+    embed.set_thumbnail(url=member.avatar_url)
+    embed.add_field(name="Имя на сервере:", value=member.display_name, inline=True)
+    embed.add_field(name="ID:", value=member.id, inline=False)
+
+    embed.set_footer(text=f"Запрос на команду: {ctx.author}", icon_url=ctx.author.avatar_url)
+
+
+    # embed.add_field(name="Bot?", value=member.bot)
+
+    embed.add_field(name="Аккаунт создан:", value=member.created_at.strftime("%a, %#d %B %Y"), inline=True)
+    embed.add_field(name="Присоединился к серверу:", value=member.joined_at.strftime("%a, %#d %B %Y"), inline=False)
+
+    embed.add_field(name=f"Роли ({len(roles)})", value=" ".join([role.mention for role in roles]))
+    embed.add_field(name="Высшая роль:", value=member.top_role.mention)
+
+
+    await ctx.send(embed=embed)
 
 @bot.command(pass_context=True)
 async def clear(ctx, amount=100):

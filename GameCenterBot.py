@@ -37,7 +37,19 @@ async def kiss(ctx, member: discord.Member):
             await ctx.send(embed=embed)
 
 
-
+@bot.command()
+async def kiss_other(ctx, member: discord.Member, member1: discord.Member):
+    author = ctx.message.author
+    if author != member :
+        # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
+        embed = discord.Embed( description='**' + str(member.mention) + ' и ' + str(member1.mention) + ' поцеловались, а кто у нас тут шипперит?**', colour=discord.Colour.red())
+        embed.set_image(url='https://i.pinimg.com/originals/69/cf/45/69cf45b7947fe8318ee8c899873066cd.gif')
+        await ctx.send(embed=embed)
+    else:
+        if member == member1:
+            # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
+            embed = discord.Embed( description='**' + str(author.mention) + 'поцеловал сам себя, вот такие пироги**', colour=discord.Colour.red())
+            await ctx.send(embed=embed)
 
 
 

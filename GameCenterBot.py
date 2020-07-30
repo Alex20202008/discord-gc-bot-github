@@ -85,7 +85,7 @@ async def userinfo(ctx, member: discord.Member):
 
     roles = [role for role in member.roles]
 
-    embed = discord.Embed(colour=member.color, timestamp=ctx.message.created_at)
+    embed = discord.Embed(colour=discord.Colour.purple(), timestamp=ctx.message.created_at)
 
     embed.set_author(name=f"Информация пользователя {member}")
     embed.set_thumbnail(url=member.avatar_url)

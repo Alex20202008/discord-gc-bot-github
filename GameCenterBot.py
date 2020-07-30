@@ -56,7 +56,7 @@ async def idea(ctx, *, args):
         if (channel_all == channel_idea):
             await ctx.message.delete()
             idk0 = await channel_idea.send(str(author.mention) + ', идея успешно отправлена в канал ' + str(channel_vote.mention))
-            idk = await channel_vote.send('Идея:\n' + args + '\n\nИдею предложил(a): ' + str(author.mention) +'\n✅ - Одобрение\n❌ - Несогласие\n❓ - Нейтрально')
+            idk = await channel_vote.send('@everyone\n' + 'Идея:\n' + args + '\n\nИдею предложил(a): ' + str(author.mention) +'\n✅ - Одобрение\n❌ - Несогласие\n❓ - Нейтрально')
             await idk.add_reaction('✅')
             await idk.add_reaction('❌')
             await idk.add_reaction('❓')

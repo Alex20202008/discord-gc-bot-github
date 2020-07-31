@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='!')
 @bot.event
 async def on_ready():
     print('Bot is online. Be happy :)')
-    activity = discord.Activity(name='!help', type=2)
+    activity = discord.Activity(name='💻', type=1)
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online) | , status=discord.Status.do_not_disturb
 
 @bot.command()
@@ -56,7 +56,8 @@ async def idea(ctx, *, args):
         if (channel_all == channel_idea):
             await ctx.message.delete()
             idk0 = await channel_idea.send(str(author.mention) + ', твоя идея успешно отправлена в канал ' + str(channel_vote.mention))
-            idk = await channel_vote.send('@everyone\n' + 'Идея:\n' + '**' + args + '**' + '\n\nИдею предложил(a): ' + str(author.mention) +'\n✅ - Одобрение\n❌ - Несогласие\n❓ - Нейтрально')
+            idk = await channel_vote.send('@everyone\n' + 'Идея:\n' + '**' + args + '**' + '\n\nИдею предложил(a): ' + str(author.mention))#+'\n✅ - Одобрение\n❌ - Несогласие\n❓ - Нейтрально'
+            await idk0.add_reaction('✅')
             await idk.add_reaction('✅')
             await idk.add_reaction('❌')
             await idk.add_reaction('❓')
@@ -79,6 +80,8 @@ async def kiss_other(ctx, member: discord.Member, member1: discord.Member):
             await nope.add_reaction('❌')
 
 
+# @bot.command()
+# async
 
 @bot.command()
 async def userinfo(ctx, member: discord.Member):

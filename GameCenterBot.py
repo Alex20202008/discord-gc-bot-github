@@ -28,7 +28,7 @@ async def avatar(ctx, member: discord.Member):
 @bot.command()
 async def join_voice(ctx):
     vc_user = ctx.author.voice.channel
-    await channel.connect()
+    await channel.connect(vc_user)
 
 
 @bot.command()

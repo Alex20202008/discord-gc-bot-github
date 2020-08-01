@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from discord.voice_client import VoiceClient
+import discord.voice_client
 import time
 import os
 import asyncio

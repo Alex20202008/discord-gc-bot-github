@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import discord.voice_client
+# import discord.voice_client
 import time
 import os
 import asyncio
@@ -26,15 +26,15 @@ async def avatar(ctx, member: discord.Member):
 
 
 
-@bot.command()
-async def join_voice(ctx):
-    channel = ctx.author.voice.channel
-    await channel.connect()
-
-
-@bot.command()
-async def leave_voice(ctx):
-    await ctx.voice_client.disconnect()
+# @bot.command()
+# async def join_voice(ctx):
+#     channel = ctx.author.voice.channel
+#     await channel.connect()
+#
+#
+# @bot.command()
+# async def leave_voice(ctx):
+#     await ctx.voice_client.disconnect()
 
 
 @bot.command()

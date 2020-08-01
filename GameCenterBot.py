@@ -14,6 +14,8 @@ async def on_ready():
     activity = discord.Activity(name=' -->  💻  <--', type=1)
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online) | , status=discord.Status.do_not_disturb
 
+
+
 @bot.command()
 async def avatar(ctx, member: discord.Member):
     author = ctx.message.author
@@ -23,6 +25,15 @@ async def avatar(ctx, member: discord.Member):
 
 
 
+@bot.command()
+async def join_voice(ctx):
+    vc_user = ctx.author.voice.channel
+    await channel.connect()
+
+
+@bot.command()
+async def leave_voice(ctx):
+    await ctx.voice_client.disconnect()
 
 
 @bot.command()
@@ -36,7 +47,7 @@ async def kiss(ctx, member: discord.Member):
     else:
         if author == member:
             # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
-            embed = discord.Embed( description='**' + str(author.mention) + 'поцеловал сам себя, вот такие пироги**', colour=discord.Colour.red())
+            embed = discord.Embed( description='**' + str(author.mention) + 'поцеловал сам себя....**', colour=discord.Colour.red())
             await ctx.send(embed=embed)
 
 

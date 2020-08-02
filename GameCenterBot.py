@@ -43,7 +43,10 @@ async def random_bot(ctx):
         randomMember = random.choice(channel.guild.members)
     await channel.send('Рандомный бот: ' + f'{randomMember.mention}')
 
-
+@bot.command()
+async def какашка(ctx):
+    author = ctx.message.author
+    ctx.send('💩' + '\nПривет, ' + str(author.mention) + '\nЯ - Маленькая Какашечка без имени' + '\nПриятно познакомиться!')
 
 # @bot.command()
 # async def join_voice(ctx):

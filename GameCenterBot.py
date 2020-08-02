@@ -33,6 +33,10 @@ async def random_user(ctx):
     await channel.send('Рандомный участник сервера: 'f'{randomMember.mention}')
 
 
+@bot.command()
+async def just_test(ctx):
+    await ctx.send('Open debug\n your start key is bb21bbrt567')
+
 # @bot.command()
 # async def random_bot(ctx):
 #     channel = ctx.message.channel

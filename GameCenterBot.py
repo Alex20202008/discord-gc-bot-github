@@ -3,7 +3,6 @@ from discord.ext import commands
 # import discord.voice_client
 import time
 import os
-import asyncio
 
 token = os.environ.get('HIDE_BOT_TOKEN') # no u
 

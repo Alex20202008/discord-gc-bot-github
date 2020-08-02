@@ -25,7 +25,22 @@ async def avatar(ctx, member: discord.Member):
     await ctx.send(embed=embed)
 
 
+@bot.command()
+async def random_user(ctx):
+    channel = ctx.message.channel
+    randomMember = random.choice(channel.guild.members)
+    while randomMember.bot == True:
+        randomMember = random.choice(channel.guild.members)
+    await channel.send('Рандомный участник сервера: 'f'{randomMember.mention}')
 
+
+@bot.command()
+async def random_bot(ctx):
+    channel = ctx.message.channel
+    randomMember = random.choice(channel.guild.members)
+    while randomMember.bot == False:
+        randomMember = random.choice(channel.guild.members)
+    await channel.send('Рандомный бот: ' + f'{randomMember.mention}')
 # @bot.command()
 # async def join_voice(ctx):
 #     channel = ctx.author.voice.channel

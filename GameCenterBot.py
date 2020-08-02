@@ -3,6 +3,7 @@ from discord.ext import commands
 # import discord.voice_client
 import time
 import os
+import random
 
 token = os.environ.get('HIDE_BOT_TOKEN') # no u
 
@@ -24,26 +25,23 @@ async def avatar(ctx, member: discord.Member):
     await ctx.send(embed=embed)
 
 
-# @bot.command()
-# async def random_user(ctx):
-#     channel = ctx.message.channel
-#     randomMember = random.choice(channel.guild.members)
-#     while randomMember.bot == True:
-#         randomMember = random.choice(channel.guild.members)
-#     await channel.send('Рандомный участник сервера: 'f'{randomMember.mention}')
+@bot.command()
+async def random_user(ctx):
+    channel = ctx.message.channel
+    randomMember = random.choice(channel.guild.members)
+    while randomMember.bot == True:
+        randomMember = random.choice(channel.guild.members)
+    await channel.send('Рандомный участник сервера: 'f'{randomMember.mention}')
+
 
 
 @bot.command()
-async def just_test(ctx):
-    await ctx.send('Open debug\n your start key is bb21bbrt567')
-
-# @bot.command()
-# async def random_bot(ctx):
-#     channel = ctx.message.channel
-#     randomMember = random.choice(channel.guild.members)
-#     while randomMember.bot == False:
-#         randomMember = random.choice(channel.guild.members)
-#     await channel.send('Рандомный бот: ' + f'{randomMember.mention}')
+async def random_bot(ctx):
+    channel = ctx.message.channel
+    randomMember = random.choice(channel.guild.members)
+    while randomMember.bot == False:
+        randomMember = random.choice(channel.guild.members)
+    await channel.send('Рандомный бот: ' + f'{randomMember.mention}')
 
 
 

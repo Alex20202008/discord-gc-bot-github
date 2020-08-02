@@ -41,6 +41,9 @@ async def random_bot(ctx):
     while randomMember.bot == False:
         randomMember = random.choice(channel.guild.members)
     await channel.send('Рандомный бот: ' + f'{randomMember.mention}')
+
+
+    
 # @bot.command()
 # async def join_voice(ctx):
 #     channel = ctx.author.voice.channel

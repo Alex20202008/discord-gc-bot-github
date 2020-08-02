@@ -46,7 +46,7 @@ async def random_bot(ctx):
 @bot.command()
 async def какашка(ctx):
     author = ctx.message.author
-    ctx.send('💩' + '\nПривет, ' + str(author.mention) + '\nЯ - Маленькая Какашечка без имени' + '\nПриятно познакомиться!')
+    await ctx.send('💩' + '\nПривет, ' + str(author.mention) + '\nЯ - Маленькая Какашечка без имени' + '\nПриятно познакомиться!')
 
 # @bot.command()
 # async def join_voice(ctx):

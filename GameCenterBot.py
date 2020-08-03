@@ -15,12 +15,13 @@ async def on_ready():
     activity = discord.Activity(name=' -->  💻  <--', type=1)
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online) | , status=discord.Status.do_not_disturb
 
+
 @bot.event
-async def on_message():
-    content = message.content
+async def on_message(message):
     author = message.author
-    if content == 'GAME CENTER BOT, ты самый лучший бот в мире' or content == 'Game Center Bot, ты лучший бот в мире':
-        love = await bot.send_message('Спасибо, ' + str(author.mention) + ', ты тоже лучший пользователь')
+    if message.content == 'Game Center Bot, ты лучший бот в мире' or message.content == 'GAME CENTER BOT, ты самый лучший бот в мире':
+        channel = message.channel
+        love = await channel.send('Спасибо, ' + str(author.mention) + ', ты тоже лучший пользователь')
         await love.add_reaction("❤️")
 
 @bot.command()

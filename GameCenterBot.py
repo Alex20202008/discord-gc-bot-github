@@ -19,9 +19,9 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     author = message.author
-    if message.content == 'Game Center Bot, ты лучший бот в мире' or message.content == 'GAME CENTER BOT, ты самый лучший бот в мире':
+    if message.content == 'Game Center Bot, ты лучший бот в мире' or message.content == 'GAME CENTER BOT, ты лучший бот в мире':
         channel = message.channel
-        love = await channel.send('Спасибо, ' + str(author.mention) + ', ты тоже лучший пользователь')
+        love = await channel.send('Спасибочки, ' + str(author.mention) + ', ты тоже лучший пользователь')
         await love.add_reaction("❤️")
 
 @bot.command()

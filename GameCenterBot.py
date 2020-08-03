@@ -15,7 +15,11 @@ async def on_ready():
     activity = discord.Activity(name=' -->  💻  <--', type=1)
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online) | , status=discord.Status.do_not_disturb
 
-
+@bot.event
+async def on_message():
+    content = message.content
+    if content == 'GAME CENTER BOT, ты самый лучший бот в мире' or content == 'Game Center Bot, ты лучший бот в мире':
+        message.add_reaction("❤️")
 
 @bot.command()
 async def avatar(ctx, member: discord.Member):

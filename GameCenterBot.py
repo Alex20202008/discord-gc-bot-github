@@ -23,6 +23,8 @@ async def on_message(message):
         channel = message.channel
         love = await channel.send('Спасибочки, ' + str(author.mention) + ', ты тоже лучший пользователь')
         await love.add_reaction("❤️")
+    else:
+        pass
 
 @bot.command()
 async def avatar(ctx, member: discord.Member):

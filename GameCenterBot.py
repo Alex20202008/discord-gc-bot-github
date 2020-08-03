@@ -16,15 +16,7 @@ async def on_ready():
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online) | , status=discord.Status.do_not_disturb
 
 
-@bot.event
-async def on_message(message):
-    author = message.author
-    if message.content == 'Game Center Bot, ты лучший бот в мире' or message.content == 'GAME CENTER BOT, ты лучший бот в мире':
-        channel = message.channel
-        love = await channel.send('Спасибочки, ' + str(author.mention) + ', ты тоже лучший пользователь')
-        await love.add_reaction("❤️")
-    else:
-        pass
+
 
 @bot.command()
 async def avatar(ctx, member: discord.Member):
@@ -221,7 +213,15 @@ async def help_me(ctx):
 
 
 
-
+@bot.event
+async def on_message(message):
+    author = message.author
+    if message.content == 'Game Center Bot, ты лучший бот в мире' or message.content == 'GAME CENTER BOT, ты лучший бот в мире':
+        channel = message.channel
+        love = await channel.send('Спасибочки, ' + str(author.mention) + ', ты тоже лучший пользователь')
+        await love.add_reaction("❤️")
+    else:
+        pass
 
 
 

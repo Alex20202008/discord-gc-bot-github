@@ -18,8 +18,10 @@ async def on_ready():
 @bot.event
 async def on_message():
     content = message.content
+    author = message.author
     if content == 'GAME CENTER BOT, ты самый лучший бот в мире' or content == 'Game Center Bot, ты лучший бот в мире':
-        message.add_reaction("❤️")
+        love = await bot.send_message('Спасибо, ' + str(author.mention) + ', ты тоже лучший пользователь')
+        await love.add_reaction("❤️")
 
 @bot.command()
 async def avatar(ctx, member: discord.Member):

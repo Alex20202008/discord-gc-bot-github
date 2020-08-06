@@ -15,7 +15,12 @@ async def on_ready():
     activity = discord.Activity(name=' -->  💻  <--', type=1)
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online) | , status=discord.Status.do_not_disturb
 
+@bot.command()
+@commands.has_permissions(administrator = True)
+async def mute(ctx, member_mute: discord.member):
+    mute_role = discord.utils.get(ctx.message.guild.roles, name = '『🔇』𝕄𝕦𝕥𝕖')
 
+    await member_mute.add_role(mute_role)
 
 
 @bot.command()

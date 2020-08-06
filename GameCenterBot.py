@@ -15,14 +15,16 @@ async def on_ready():
     activity = discord.Activity(name=' -->  💻  <--', type=1)
     await bot.change_presence(activity=activity)# .Status.(Idle, do_not_disturb, online) | , status=discord.Status.do_not_disturb
 
+
+
 @bot.command()
 @commands.has_permissions(administrator = True)
 async def mute(ctx, member_mute: discord.Member, *, args):
     mute_role = discord.utils.get(ctx.message.guild.roles, name = '『🔇』𝕄𝕦𝕥𝕖')
 
     await member_mute.add_roles(mute_role)
-    embed = discord.Embed( description=str(member_mute.mention) + '**Был замьючен \nПричина: ' + str(args) + '**', colour=discord.Colour.purple())
-    embed.set_image(url="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Road-sign-no-entry.svg/1200px-Road-sign-no-entry.svg.png")
+    embed = discord.Embed( description=str(member_mute.mention) + ' **Был замьючен \nПричина: ' + str(args) + '**', colour=discord.Colour.red())
+    # embed.set_image(url="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Road-sign-no-entry.svg/1200px-Road-sign-no-entry.svg.png")
 
     lol_mute = await ctx.send(embed = embed)
     await lol_mute.add_reaction("⛔")

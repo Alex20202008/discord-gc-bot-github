@@ -17,10 +17,16 @@ async def on_ready():
 
 @bot.command()
 @commands.has_permissions(administrator = True)
-async def mute(ctx, member_mute: discord.Member):
+async def mute(ctx, member_mute: discord.Member, *, args):
     mute_role = discord.utils.get(ctx.message.guild.roles, name = '『🔇』𝕄𝕦𝕥𝕖')
 
     await member_mute.add_roles(mute_role)
+    embed = discord.Embed( description=str(member_mute.mention) + '**Был замьючен \nПричина: ' + str(args) + '**', colour=discord.Colour.purple())
+    embed.set_image(url="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Road-sign-no-entry.svg/1200px-Road-sign-no-entry.svg.png")
+
+    lol_mute = await ctx.send(embed = embed)
+    await lol_mute.add_reaction("⛔")
+
 
 
 @bot.command()

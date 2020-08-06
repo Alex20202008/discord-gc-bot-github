@@ -18,9 +18,9 @@ async def on_ready():
 @bot.command()
 @commands.has_permissions(administrator = True)
 async def mute(ctx, member_mute: discord.Member):
-	mute_role = discord.utils.get(ctx.message.guild.roles, name = '『🔇』𝕄𝕦𝕥𝕖')
+    mute_role = discord.utils.get(ctx.message.guild.roles, name = '『🔇』𝕄𝕦𝕥𝕖')
 
-	await member_mute.add_roles(mute_role)
+    await member_mute.add_roles(mute_role)
 
 
 @bot.command()

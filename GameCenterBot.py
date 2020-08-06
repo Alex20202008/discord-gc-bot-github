@@ -30,6 +30,19 @@ async def mute(ctx, member_mute: discord.Member, *, args):
     await lol_mute.add_reaction("⛔")
 
 
+@bot.command()
+@commands.has_permissions(administrator = True)
+async def unmute(ctx, member_unmute: discord.Member):
+    mute_role = discord.utils.get(ctx.message.guild.roles, name = '『🔇』𝕄𝕦𝕥𝕖')
+
+    await member_unmute.remove_roles(mute_role)
+    embed = discord.Embed( description=str(member_unmute.mention) + ' **Был размьючен' + '**', colour=discord.Colour.green())
+    # embed.set_image(url="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Road-sign-no-entry.svg/1200px-Road-sign-no-entry.svg.png")
+
+    lol_unmute = await ctx.send(embed = embed)
+    await lol_unmute.add_reaction("✅")
+
+
 
 @bot.command()
 async def avatar(ctx, member: discord.Member):

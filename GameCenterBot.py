@@ -94,16 +94,22 @@ async def какашка(ctx):
 @bot.command()
 async def kiss(ctx, member: discord.Member):
     author = ctx.message.author
-    if author != member :
-        # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
-        embed = discord.Embed( description='**' + str(author.mention) + ' и ' + str(member.mention) + ' поцеловались**', colour=discord.Colour.red())
+    if (member.bot == True):
+        embed = discord.Embed( description='**' + str(author.mention) + ', Нельзя целоваться с ботами **', colour=discord.Colour.red())
         embed.set_image(url='https://i.pinimg.com/originals/69/cf/45/69cf45b7947fe8318ee8c899873066cd.gif')
-        await ctx.send(embed=embed)
+        idk = await ctx.send(embed=embed)
+        await idk.add_reaction('❌')
     else:
-        if author == member:
+        if author != member :
             # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
-            embed = discord.Embed( description='**' + str(author.mention) + 'поцеловал сам себя....**', colour=discord.Colour.red())
+            embed = discord.Embed( description='**' + str(author.mention) + ' и ' + str(member.mention) + ' поцеловались**', colour=discord.Colour.red())
+            embed.set_image(url='https://i.pinimg.com/originals/69/cf/45/69cf45b7947fe8318ee8c899873066cd.gif')
             await ctx.send(embed=embed)
+        else:
+            if author == member:
+                # ctx.send(str(author.mention) + ' и ' str(member.mention) + ' поцеловались')
+                embed = discord.Embed( description='**' + str(author.mention) + 'поцеловал сам себя....**', colour=discord.Colour.red())
+                await ctx.send(embed=embed)
 
 
 

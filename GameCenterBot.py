@@ -96,7 +96,6 @@ async def kiss(ctx, member: discord.Member):
     author = ctx.message.author
     if (member.bot == True):
         embed = discord.Embed( description='**' + str(author.mention) + ', Нельзя целоваться с ботами **', colour=discord.Colour.red())
-        embed.set_image(url='https://i.pinimg.com/originals/69/cf/45/69cf45b7947fe8318ee8c899873066cd.gif')
         idk = await ctx.send(embed=embed)
         await idk.add_reaction('❌')
     else:

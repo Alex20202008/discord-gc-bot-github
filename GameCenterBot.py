@@ -196,7 +196,10 @@ async def clear(ctx, amount=100):
 async def send(ctx, *, arg):
     await ctx.send(arg)
 
-
+@bot.command()
+async def send_hide(ctx, *, arg):
+    await ctx.send(arg)
+    await ctx.delete_message()
 
 
 @bot.command()

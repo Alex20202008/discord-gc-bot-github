@@ -196,10 +196,7 @@ async def clear(ctx, amount=100):
 async def send(ctx, *, arg):
     await ctx.send(arg)
 
-@bot.command()
-async def send_hide(ctx, *, arg):
-    await ctx.send(arg)
-    await ctx.delete_message()
+
 
 
 @bot.command()
@@ -213,6 +210,11 @@ async def привет(ctx):
 	author = ctx.message.author
 	await ctx.send('Привет, ' + author.mention)
 
+
+@bot.command()
+async def send_hide(ctx, *, arg):
+    await ctx.message.delete()
+    await ctx.send(arg)
 
 @bot.command()
 async def embed(ctx):
